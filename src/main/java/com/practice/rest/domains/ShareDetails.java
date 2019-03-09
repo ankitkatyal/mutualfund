@@ -6,6 +6,17 @@ public class ShareDetails {
 	private String quantity;
 	private String price;
 	
+	public ShareDetails(String shareName, String quantity, String price) {
+		super();
+		this.shareName = shareName;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
+	public ShareDetails() {
+		
+	}
+
 	public String getShareName() {
 		return shareName;
 	}

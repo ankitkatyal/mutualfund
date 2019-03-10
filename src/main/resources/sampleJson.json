@@ -1,0 +1,16 @@
+{
+  "name" : "birla",
+  "totalShares" : [ {
+    "shareName" : "abcd",
+    "quantity" : "2",
+    "price" : "4210"
+  }, {
+    "shareName" : "abcde",
+    "quantity" : "3",
+    "price" : "24210"
+  }, {
+    "shareName" : "eabcd",
+    "quantity" : "24",
+    "price" : "34210"
+  } ]
+}

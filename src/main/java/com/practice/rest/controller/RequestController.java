@@ -29,11 +29,13 @@ public class RequestController {
 	public ResponseEntity<Response> getMutualFundDetails(@PathVariable String name) throws MutualFundNotFound {
 		MutualFund mutualFund = service.getMutualFundDetails(name);
 		if (mutualFund == null) {
-			throw new MutualFundNotFound();
+			Set<String> mutualList = new HashSet<String>();
+			Response response = new Response(mutualList , UUID.randomUUID(), name, new Date());
+			return new ResponseEntity<Response>(response, HttpStatus.NOT_FOUND);
 		}
-		Set<String> mutaulList = new HashSet<String>();
-		mutaulList.add(mutualFund.toString());
-		Response response = new Response(mutaulList, UUID.randomUUID(), name, new Date());
+		Set<String> mutualList = new HashSet<String>();
+		mutualList.add(mutualList.toString());
+		Response response = new Response(mutualList , UUID.randomUUID(), name, new Date());
 		return new ResponseEntity<Response>(response, HttpStatus.OK);
 	}
 

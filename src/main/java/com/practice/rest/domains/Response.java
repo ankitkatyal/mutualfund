@@ -1,27 +1,25 @@
 package com.practice.rest.domains;
 
+import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
-
-import org.springframework.http.HttpStatus;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 public class Response {
-	@JsonInclude(value=Include.NON_NULL)
+	@JsonInclude(value = Include.NON_NULL)
 	Set<String> mutualFunds;
 	private UUID uuid;
 	private String name;
-	private HttpStatus responseCode;
+	private Date timestamp;
 
-	
-	public Response(Set<String> mutualFunds, UUID uuid, String name, HttpStatus responseCode) {
+	public Response(Set<String> mutualFunds, UUID uuid, String name, Date timestamp) {
 		super();
 		this.mutualFunds = mutualFunds;
 		this.uuid = uuid;
 		this.name = name;
-		this.responseCode = responseCode;
+		this.timestamp = timestamp;
 	}
 
 	public Set<String> getMutualFunds() {
@@ -48,12 +46,12 @@ public class Response {
 		this.name = name;
 	}
 
-	public HttpStatus getResponseCode() {
-		return responseCode;
+	public Date getTimestamp() {
+		return timestamp;
 	}
 
-	public void setResponseCode(HttpStatus responseCode) {
-		this.responseCode = responseCode;
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 
 }
